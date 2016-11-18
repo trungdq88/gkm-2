@@ -19,6 +19,8 @@ Make sure you have [Apache Ant](http://ant.apache.org/) in your PATH
   ./run.sh
 ```
 
+![image](https://cloud.githubusercontent.com/assets/4214509/20423149/4bcfc060-ada1-11e6-9765-16e3ebd5a5e5.png)
+
 ## Requirements
 GKM-Java depends on [JNativeHook](https://code.google.com/p/jnativehook/), which runs on Java. Thus you will need to have a JVM available and more importantly, java availble on your PATH.
 
