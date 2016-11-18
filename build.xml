@@ -52,6 +52,7 @@
     <exclude name="**/?*.flex"/>
     <exclude name="**/?*.kt"/>
     <exclude name="**/?*.clj"/>
+    <exclude name="**/?*.aj"/>
   </patternset>
   
   <!-- JDK definitions -->
@@ -97,6 +98,10 @@
   
   <!-- Project Libraries -->
   
+  <path id="library.gson-2.2.2.classpath">
+    <pathelement location="${basedir}/lib/gson-2.2.2.jar"/>
+  </path>
+  
   <path id="library.jnativehook.classpath">
     <pathelement location="${basedir}/lib/JNativeHook.jar"/>
   </path>
@@ -140,23 +145,27 @@
   <path id="gkm-2.module.production.classpath">
     <path refid="${module.jdk.classpath.gkm-2}"/>
     <path refid="library.jnativehook.classpath"/>
+    <path refid="library.gson-2.2.2.classpath"/>
   </path>
   
   <path id="gkm-2.runtime.production.module.classpath">
     <pathelement location="${gkm-2.output.dir}"/>
     <path refid="library.jnativehook.classpath"/>
+    <path refid="library.gson-2.2.2.classpath"/>
   </path>
   
   <path id="gkm-2.module.classpath">
     <path refid="${module.jdk.classpath.gkm-2}"/>
     <pathelement location="${gkm-2.output.dir}"/>
     <path refid="library.jnativehook.classpath"/>
+    <path refid="library.gson-2.2.2.classpath"/>
   </path>
   
   <path id="gkm-2.runtime.module.classpath">
     <pathelement location="${gkm-2.testoutput.dir}"/>
     <pathelement location="${gkm-2.output.dir}"/>
     <path refid="library.jnativehook.classpath"/>
+    <path refid="library.gson-2.2.2.classpath"/>
   </path>
   
   
@@ -223,6 +232,7 @@
     <jar destfile="${temp.jar.path.gkm-2.jar}" duplicate="preserve" manifest="src/META-INF/MANIFEST.MF">
       <zipfileset dir="${gkm-2.output.dir}"/>
       <zipfileset src="${basedir}/lib/JNativeHook.jar"/>
+      <zipfileset src="${basedir}/lib/gson-2.2.2.jar"/>
     </jar>
     <copy file="${temp.jar.path.gkm-2.jar}" tofile="${artifact.temp.output.gkm-2:jar}/gkm-2.jar"/>
   </target>

@@ -1,5 +1,3 @@
-import org.jnativehook.GlobalScreen;
-import org.jnativehook.NativeHookException;
 import org.jnativehook.NativeInputEvent;
 import org.jnativehook.keyboard.NativeKeyEvent;
 import org.jnativehook.keyboard.NativeKeyListener;
@@ -7,11 +5,16 @@ import org.jnativehook.mouse.NativeMouseEvent;
 import org.jnativehook.mouse.NativeMouseInputListener;
 import org.jnativehook.mouse.NativeMouseWheelEvent;
 import org.jnativehook.mouse.NativeMouseWheelListener;
+import com.google.gson.Gson;
 
 public class GlobalInputListener implements NativeKeyListener, NativeMouseInputListener, NativeMouseWheelListener {
+  private Gson gson;
+  public GlobalInputListener() {
+    this.gson = new Gson();
+  }
 
   private void displayEventInfo(final NativeInputEvent e) {
-    System.out.println(e.paramString());
+    System.out.println(gson.toJson(e));
   }
 
   /**
