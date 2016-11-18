@@ -21,9 +21,12 @@ public class GlobalListener
     }
 
     GlobalInputListener listener = new GlobalInputListener();
-    GlobalScreen.addNativeMouseListener(listener);
-    GlobalScreen.addNativeMouseMotionListener(listener);
-    GlobalScreen.addNativeMouseWheelListener(listener);
+
+    if (args.length > 0 && args[0].toString().equals("--mouse")) {
+      GlobalScreen.addNativeMouseListener(listener);
+      GlobalScreen.addNativeMouseMotionListener(listener);
+      GlobalScreen.addNativeMouseWheelListener(listener);
+    }
     GlobalScreen.addNativeKeyListener(listener);
   }
 

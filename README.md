@@ -16,7 +16,10 @@ Make sure you have [Apache Ant](http://ant.apache.org/) in your PATH
 ## Run
 
 ```bash
+  # Track keyboard only
   ./run.sh
+  # Track keyboard and mouse
+  ./run.sh --mouse
 ```
 
 ![image](https://cloud.githubusercontent.com/assets/4214509/20423149/4bcfc060-ada1-11e6-9765-16e3ebd5a5e5.png)
